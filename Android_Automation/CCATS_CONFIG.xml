@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCases>
+ <TestCase id="1">
+  <TestName>DirtyFill</TestName>
+  <!--Type Y for yes and N for no -->
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+    <Name>IsRandom</Name>
+	<!--Type Y for yes and N for no -->
+    <Value>N</Value>
+   </TProperty>
+   <TProperty>
+	<Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>
+ </TestCase>
+ <TestCase id="2">
+  <TestName>CapacityCheck</TestName>
+  <Execute>Y</Execute>  
+ </TestCase>
+ <TestCase id="3">
+  <TestName>ImageTest</TestName>
+  <Execute>N</Execute>
+   <TProperties>
+    <TProperty>
+	 <Name>IResolutions</Name>
+	 <Value>1920x1080;1920x1080;1920x1080</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>ICount</Name>
+	 <!--Possible Range 3-999 count-->
+	 <Value>50</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>ISlideshow</Name>
+	 <!--Type Y for yes and N for no -->
+	 <Value>Y</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>IFlash</Name>
+	 <!--Type Y for yes and N for no -->
+	 <Value>Y</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>IShutter</Name>
+	 <!--Type Y for yes and N for no -->
+	 <Value>Y</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>IBurst</Name>
+	 <!--Type Y for yes and N for no -->
+	 <Value>Y</Value>
+	</TProperty>
+	<TProperty>
+	 <Name>IBurstCount</Name>
+	 <Value>5</Value>
+	</TProperty>
+   </TProperties>  
+ </TestCase>
+ <TestCase id="4">
+  <TestName>VideoTest</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+	<Name>VResolutions</Name>
+	<Value>1920x1080;1280x720;640x480</Value>
+   </TProperty>
+   <TProperty>
+	<Name>VTime</Name>
+	<!--Possible Range 1-99 mins -->
+	<Value>90</Value>
+   </TProperty>	 
+   <TProperty>
+	<Name>VFlash</Name>
+	<!--Type Y for yes and N for no -->
+	<Value>Y</Value>
+   </TProperty>
+   <TProperty>
+	<Name>VShutter</Name>
+	<!--Type Y for yes and N for no -->
+	<Value>Y</Value>
+   </TProperty>
+   <TProperty>
+	<Name>VPlayback</Name>
+	<!--Type Y for yes and N for no -->
+	<Value>Y</Value>
+   </TProperty>
+   <TProperty>
+	<Name>VSnapshot</Name>
+	<!--Type Y for yes and N for no -->
+	<Value>Y</Value>
+   </TProperty>
+   <TProperty>
+	<Name>VSPlayback</Name>
+	<!--Type Y for yes and N for no -->
+	<Value>Y</Value>
+   </TProperty>
+  </TProperties>  
+ </TestCase>
+ <TestCase id="5">
+  <TestName>SleepWakeup</TestName>
+  <Execute>N</Execute>  
+ </TestCase>
+ <TestCase id="6">
+  <TestName>SequentialIO</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+    <Name>FileSize</Name>
+	<!--Possible values 10,100,500,1024,4096 -->
+	<Value>10</Value>
+   </TProperty>
+   <TProperty>
+    <Name>WriteChunk</Name>
+	<!--Possible values 4,8,16,32,64,128 -->
+	<Value>128</Value>
+   </TProperty>
+   <TProperty>
+    <Name>ReadChunk</Name>
+	<!--Possible values 4,8,16,32,64,128 -->
+	<Value>32</Value>
+   </TProperty>
+   <TProperty>
+    <Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>  
+ </TestCase>
+ <TestCase id="7">
+  <TestName>RandomIO</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+    <Name>FileSize</Name>
+	<!--Possible values 10,100,500,1024,4096 -->
+	<Value>10</Value>
+   </TProperty>
+   <TProperty>
+    <Name>WriteChunk</Name>
+	<!--Possible values 4,8,16,32,64,128 -->
+	<Value>128</Value>
+   </TProperty>
+   <TProperty>
+    <Name>ReadChunk</Name>
+	<!--Possible values 4,8,16,32,64,128 -->
+	<Value>32</Value>
+   </TProperty>
+   <TProperty>
+    <Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>  
+ </TestCase>
+ <TestCase id="8">
+  <TestName>EraseAll</TestName>
+  <Execute>N</Execute>  
+ </TestCase>
+ <TestCase id="9">
+  <TestName>LongRunImage</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+	<Name>LRIResolution</Name>
+	<Value>4032x3024</Value>
+   </TProperty>
+   <TProperty>
+    <Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>    
+ </TestCase>
+ <TestCase id="10">
+  <TestName>LongRunVideo</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+	<Name>LRVResolution</Name>
+	<Value>3840x2160</Value>
+   </TProperty>
+   <TProperty>
+    <Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>    
+ </TestCase>
+ <TestCase id="11">
+  <TestName>DataTransfer</TestName>
+  <Execute>N</Execute>
+  <TProperties>
+   <TProperty>
+    <Name>LoopCount</Name>
+	<Value>1</Value>
+   </TProperty>
+  </TProperties>    
+ </TestCase>
+</TestCases>
