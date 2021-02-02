@@ -1,0 +1,21 @@
+2021-02-03 00:58:23   :  : 
+2021-02-03 00:58:23  INFO : APP_COMMON : ----------Starting Log File----------------
+2021-02-03 00:58:23  INFO : APP_COMMON : 
+***** DEVICE INFO 
+Brand: google
+Device: generic_x86
+Model: Android SDK built for x86
+Manufacturer: Google
+Product: sdk_google_phone_x86
+SDK_INT: 25
+Android Version: 7.1.1
+
+***** APP INFO 
+Version: 3.0.0
+
+2021-02-03 00:58:26  INFO : CAPACITY : CapacityCheck Test Started
+2021-02-03 00:58:26  INFO : CAPACITY : Total Capacity: 0.49803543 GB
+2021-02-03 00:58:26  INFO : CAPACITY : Capacity Used: 5.9127808E-5 GB
+2021-02-03 00:58:26  INFO : CAPACITY : Capacity Available: 0.4979763 GB
+2021-02-03 00:58:31  INFO : CAPACITY : CapacityCheck Test case passed
+2021-02-03 00:58:33  INFO : APP_COMMON : ----------Ending Log File----------------
