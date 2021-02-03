@@ -44,6 +44,7 @@ if($result==0){
             $file_name = $android_id.".txt"; //name of your file
             $server_path = "uploads/"; //server path to folder
             $web_path = "http://192.168.0.102/Embedded_SQA/Android_Automation/uploads/"; //web path to folder
+            $StatusFlag = $_GET['StatusFlag'];
 
             //$file_name = date("U").".txt"; //name of your file
             
@@ -56,8 +57,17 @@ if($result==0){
             }
 
             //echo $web_path.$file_name;
-            $query="UPDATE automation.android_automation SET `command` = '20' , `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
-            `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+            if ($StatusFlag == "FAIL"){
+                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."',`command`= 30 , `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
+                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+            }elseif ($StatusFlag == "PASS"){
+                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."' ,`command`= 30, `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
+                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+            }else{
+                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."' ,`command`= 20, `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
+                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+            }
+
             $result=$exe_query->getObject($query);
 
             echo "InProgress";

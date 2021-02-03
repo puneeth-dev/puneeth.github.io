@@ -155,7 +155,7 @@
  </TestCase>
  <TestCase id="8">
   <TestName>EraseAll</TestName>
-  <Execute>N</Execute>  
+  <Execute>Y</Execute>  
  </TestCase>
  <TestCase id="9">
   <TestName>LongRunImage</TestName>
