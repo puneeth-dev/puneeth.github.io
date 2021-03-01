@@ -1,0 +1,52 @@
+2021-03-01 23:03:46  INFO : APP_COMMON : ----------Starting Log File----------------
+2021-03-01 23:03:46  INFO : APP_COMMON : 
+***** DEVICE INFO 
+Brand: google
+Device: generic_x86
+Model: Android SDK built for x86
+Manufacturer: Google
+Product: sdk_google_phone_x86
+SDK_INT: 25
+Android Version: 7.1.1
+
+***** APP INFO 
+Version: 3.0.0
+
+2021-03-01 23:03:46  INFO : APP_COMMON : ----------Starting Log File----------------
+2021-03-01 23:03:46  INFO : APP_COMMON : 
+***** DEVICE INFO 
+Brand: google
+Device: generic_x86
+Model: Android SDK built for x86
+Manufacturer: Google
+Product: sdk_google_phone_x86
+SDK_INT: 25
+Android Version: 7.1.1
+
+***** APP INFO 
+Version: 3.0.0
+
+2021-03-01 23:03:46  INFO : APP_COMMON : ----------Starting Log File----------------
+2021-03-01 23:03:46  INFO : APP_COMMON : 
+***** DEVICE INFO 
+Brand: google
+Device: generic_x86
+Model: Android SDK built for x86
+Manufacturer: Google
+Product: sdk_google_phone_x86
+SDK_INT: 25
+Android Version: 7.1.1
+
+***** APP INFO 
+Version: 3.0.0
+
+2021-03-01 23:03:49  INFO : CAPACITY : CapacityCheck Test Started
+2021-03-01 23:03:49  INFO : CAPACITY : Total Capacity: 0.49803543 GB
+2021-03-01 23:03:49  INFO : CAPACITY : Capacity Used: 5.9127808E-5 GB
+2021-03-01 23:03:49  INFO : CAPACITY : Capacity Available: 0.4979763 GB
+2021-03-01 23:03:54  INFO : CAPACITY : CapacityCheck Test case passed
+2021-03-01 23:03:57  INFO : ERASE_ALL : EraseAll Test Started
+2021-03-01 23:04:02  INFO : ERASE_ALL : All contents in SD Card from this application deleted
+2021-03-01 23:04:02  INFO : ERASE_ALL : EraseAll Test case passed
+2021-03-01 23:04:05  INFO : APP_COMMON : ----------Ending Log File----------------
+2021-03-01 23:04:05   :  : 

@@ -11,23 +11,26 @@ $battery_state=$_GET["battery_state"];
 //command 10 -> START
 //command 20 -> IN-PROGRESS
 //command 30 -> STOP
+//command 40 -> FAIL
+//command 50 -> STOPPED
+//command 60 -> PASS
 
 if($android_id!=null && $device_ip!=null){
     $query="SELECT * FROM automation.android_automation  WHERE android_id = '".$android_id."'";
-    $result=$exe_query->fetchdata($query);
+    $_result=$exe_query->fetchdata($query);
 }else return;
 
-if($result==0){
+if($_result==0){
     $action="register";
-}else if($result[0]['command']==10){
+}else if($_result[0]['command']==10){
     $action="android-command-START";
-}else if($result[0]['command']==20){
+}else if($_result[0]['command']==20){
     $action="android-command-InProgress";
-}else if($result[0]['command']==30){
+}else if($_result[0]['command']==30){
     $action="android-command-STOP";
 }else{
     $query="UPDATE automation.android_automation SET `battery_percent` = '$battery_percent',
-    `battery_state` = '$battery_state',`last_update`= CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+    `battery_state` = '$battery_state' ,`device_ip` = '$device_ip'  ,`last_update`= CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
     $result=$exe_query->getObject($query);
     return;
 }
@@ -41,7 +44,7 @@ if($result==0){
         break;
         case "android-command-InProgress":
 
-            $file_name = $android_id.".txt"; //name of your file
+            $file_name = $_result[0]['sl_no'].".txt"; //name of your file
             $server_path = "uploads/"; //server path to folder
             $web_path = "http://192.168.0.102/Embedded_SQA/Android_Automation/uploads/"; //web path to folder
             $StatusFlag = $_GET['StatusFlag'];
@@ -58,14 +61,14 @@ if($result==0){
 
             //echo $web_path.$file_name;
             if ($StatusFlag == "FAIL"){
-                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."',`command`= 30 , `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
-                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."',`command`= 40 , `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
+                `battery_state` = '$battery_state',`device_ip` = '$device_ip' , `last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
             }elseif ($StatusFlag == "PASS"){
-                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."' ,`command`= 30, `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
-                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+                $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."' ,`command`= 60, `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
+                `battery_state` = '$battery_state',`device_ip` = '$device_ip' ,`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
             }else{
                 $query="UPDATE automation.android_automation SET `StatusFlag` = '".$StatusFlag."' ,`command`= 20, `log_file_path`= '".$web_path.$file_name."', `battery_percent` = '$battery_percent',
-                `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+                `battery_state` = '$battery_state' ,`device_ip` = '$device_ip'  ,`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
             }
 
             $result=$exe_query->getObject($query);
@@ -74,13 +77,13 @@ if($result==0){
         break;
         case "android-command-START":
             $query="UPDATE automation.android_automation SET `command` = '20' , `battery_percent` = '$battery_percent',
-                    `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+                    `battery_state` = '$battery_state' ,`device_ip` = '$device_ip' ,`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
             $result=$exe_query->getObject($query);
             echo "START";
         break;
         case "android-command-STOP":
-            $query="UPDATE automation.android_automation SET `command` = '0' , `battery_percent` = '$battery_percent',
-                    `battery_state` = '$battery_state',`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
+            $query="UPDATE automation.android_automation SET `command` = '50' , `battery_percent` = '$battery_percent',
+                    `battery_state` = '$battery_state' ,`device_ip` = '$device_ip'  ,`last_update`=CURRENT_TIMESTAMP WHERE `android_id` = '$android_id'";
             $result=$exe_query->getObject($query);
             echo "STOP";
         break;
